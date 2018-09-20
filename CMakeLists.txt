@@ -83,9 +83,9 @@ ENDIF()
 
 #Add custom CMake Module
 if (CMAKE_MODULE_PATH)
-    SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}/cmake/modules/" CACHE INTERNAL "Location of our custom CMake modules.")
+    SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}/cmake/modules/")
 else (CMAKE_MODULE_PATH)
-    SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/" CACHE INTERNAL "Location of our custom CMake modules.")
+    SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
 endif (CMAKE_MODULE_PATH)
 
 # auto-configure style checks, other CMake modules.
