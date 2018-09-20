@@ -82,8 +82,13 @@ IF(MSVC)
 ENDIF()
 
 #Add custom CMake Module
-SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/"
-  CACHE INTERNAL "Location of our custom CMake modules.")
+if (CMAKE_MODULE_PATH)
+    SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/"
+        CACHE INTERNAL "Location of our custom CMake modules.")
+else (CMAKE_MODULE_PATH)
+    SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}/cmake/modules/"
+        CACHE INTERNAL "Location of our custom CMake modules.")
+endif (CMAKE_MODULE_PATH)
 
 # auto-configure style checks, other CMake modules.
 INCLUDE(CheckLibraryExists)
